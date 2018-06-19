@@ -34,7 +34,8 @@ class Flight extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['from', 'to', 'back', 'adult', 'child', 'infant'], 'integer'],
+            [['from', 'to', 'adult', 'child', 'infant'], 'integer'],
+            [['back'], 'boolean'],
             [['start', 'stop'], 'safe'],
             [['price'], 'number'],
         ];

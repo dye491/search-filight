@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use Yii;
+//use Yii;
 
 /**
  * This is the model class for table "airport".
@@ -53,7 +53,7 @@ class Airport extends \yii\db\ActiveRecord
      * @param $code airport code
      * @return null|static
      */
-    public function searchByCode($code)
+    public static function searchByCode($code)
     {
         return Airport::findOne(['code' => $code]);
     }
