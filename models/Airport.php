@@ -40,10 +40,21 @@ class Airport extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'code' => 'Code',
-            'name' => 'Name',
+            'id'      => 'ID',
+            'code'    => 'Code',
+            'name'    => 'Name',
             'country' => 'Country',
         ];
+    }
+
+    /**
+     * Returns airport model by code
+     *
+     * @param $code airport code
+     * @return null|static
+     */
+    public function searchByCode($code)
+    {
+        return Airport::findOne(['code' => $code]);
     }
 }
